@@ -68,10 +68,22 @@
                 </div>
             </div>
             <!-- End Parallax Section -->
+            
+            <!--Scrape html from https://warbandtracker.com/goldberg/ using json http request store in a variable htmlInfo-->
+            <script>
+                var htmlInfo = "";
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        htmlInfo = this.responseText;
+                    }
+                };
+                xmlhttp.open("GET", "https://secure.runescape.com/m=itemdb_rs/top100?list=2", true);
+                xmlhttp.send();
+                console.log(htmlInfo);
+                </script>
 
-            <!-- CurveUp -->
-           
-               
+
             </svg>
 
                 <!-- JS -->
